@@ -21,13 +21,15 @@ namespace XdtTransform
                 catch (XdtTransformException tex)
                 {
                     Console.WriteLine("Error transforming file: {0}", tex.Message);
+                    Environment.Exit(1);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Unexpected exception: {0}", ex.Message);
+                    Environment.Exit(1);
                 }
             }
-            Environment.Exit(1);
+            Environment.Exit(0);
         }
 
         private readonly Options options;
